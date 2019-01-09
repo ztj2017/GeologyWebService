@@ -1,0 +1,89 @@
+<div class="span2 linear">
+	<ul class="nav nav-stacked nav-pills">
+		<li ng-repeat="x in spotsList" ng-class="{active: x.id == spotId}">
+			<a href="#!/scenic-spots/{{x.id}}"><i class="glyphicon glyphicon-tree-conifer"></i> {{x.name}}</a>
+		</li>
+	</ul>
+</div>
+<div class="span10">
+	<ul class="breadcrumb">
+		<li>
+			<a href="#!/scenic-spots/1">地址遗址</a> <span class="divider">/</span>
+		</li>
+		<li>
+			<a href="#!/scenic-spots/{{relicId}}">{{spotsName}}</a> <span class="divider">/</span>
+		</li>
+		<li class="active">
+			{{relicName}}
+		</li>
+	</ul>
+	<div class="row-fluid">
+		<div class="span12">
+			<table class="table table-bordered linear">
+				<tbody>
+					<tr>
+						<td width="10%">
+							编号<i style="color: red;">*</i>
+						</td>
+						<td contenteditable="true"></td>
+					</tr>
+					<tr>
+						<td>
+							名称<i style="color: red;">*</i>
+						</td>
+						<td contenteditable="true"></td>
+					</tr>
+					<tr>
+						<td>
+							类别
+						</td>
+						<td contenteditable="true"></td>
+					</tr>
+					<tr>
+						<td>
+							坐标
+						</td>
+						<td contenteditable="true"></td>
+					</tr>
+					<tr>
+						<td>
+							描述
+						</td>
+						<td contenteditable="true"></td>
+					</tr>
+					<tr>
+						<td style="vertical-align: middle !important;">
+							图片
+						</td>
+						<td>
+							<div class="row-fluid">
+								<div class="span12">
+									<a class="btn" title="上传新图片" onclick="$('input[name=pic]').click();"><i class="glyphicon glyphicon-picture"></i> 添加图片</a>
+									<label id="photoCover0" class="label"></label>
+									<label id="photoCover1" class="label"></label>
+									<label id="photoCover2" class="label"></label>
+								</div>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<!--
+    	作者：
+    	时间：2018-12-28
+    	描述：隐藏form
+    -->
+	<form id="uploadFm" hidden="true">
+		<input type="file" name="pic" onchange="getValue(this)" multiple="multiple" accept=".png, .jpeg, .gif, .jpg" />
+	</form>
+	<div class="row-fluid">
+		<div class="span12">
+			<div class="pagination pagination-centered">
+				<a href="javascrript:void(0)" ng-click="doCreate()" class="btn btn-success"><i class="glyphicon glyphicon-pencil"></i> 创建</a>
+				<a onclick="javascript:history.back()" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i> 取消</a>
+			</div>
+		</div>
+	</div>
+</div>

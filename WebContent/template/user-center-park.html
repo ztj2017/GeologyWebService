@@ -1,0 +1,88 @@
+<div class="span2">
+	<div class="accordion" id="accordion-522792">
+		<div class="accordion-group">
+			<div class="accordion-heading" style="background:#EEEEEE;">
+				<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-522792" href="javascript:void(0);#accordion-element-304422"><strong>公园管理</strong></a>
+			</div>
+			<div id="accordion-element-304422" class="accordion-body collapse in" style="background:#F5F5F5;">
+				<div class="accordion-inner" style="background:#FAFAFA;">
+					<a href="#!/user-center/park/jq"><i class="glyphicon glyphicon-pawn"></i> 景区管理</a>
+				</div>
+				<div class="accordion-inner" style="background:#FAFAFA;" class="active">
+					<a href="#!/user-center/park/zr"><i class="glyphicon glyphicon-tint"></i> 自然景观</a>
+				</div>
+				<div class="accordion-inner" style="background:#FAFAFA;">
+					<a href="#!/user-center/park/rw"><i class="glyphicon glyphicon-user"></i> 人文景观</a>
+				</div>
+				<div class="accordion-inner" style="background:#FAFAFA;">
+					<a href="#!/user-center/park/yj"><i class="glyphicon glyphicon-cog"></i> 科学研究</a>
+				</div>
+				<div class="accordion-inner" style="background:#FAFAFA;">
+					<a href="#!/user-center/park/tp"><i class="glyphicon glyphicon-cloud-upload"></i> 上传主页图片</a>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+<div class="span10">
+	<ul class="breadcrumb">
+		<li class="active">
+			{{actionName}}
+		</li>
+	</ul>
+	<a class="btn btn-success" href="#!/user-center/park/{{actionUrl}}" ng-class="{hidden: hiddenList}">{{btnName}}</a>
+	<hr>
+	<table class="table table-hover table-striped" ng-class="{hidden: hiddenList}">
+		<thead>
+			<tr style="background-color: #EEEEEE;">
+				<th>序号</th>
+				<th>名称</th>
+				<th>描述</th>
+				<th>修改时间</th>
+				<th>操作</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class="error" ng-class="{hidden: hideNoData}">
+				<td colspan="5" style="text-align: center;">No Data</td>
+			</tr>
+			<tr class="info" ng-repeat = "jq in dataList">
+				<td>{{$index +1}}</td>
+				<td>{{jq.name}}</td>
+				<td title="{{jq.info}}">{{jq.info}}</td>
+				<td>{{jq.updateTime}}</td>
+				<td>
+					<a href="#" title="编辑"><i class="glyphicon glyphicon-edit"></i></a>
+					<a href="#" title="删除"><i class="glyphicon glyphicon-trash"></i></a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<!--创建-->
+	<div class="row-fluid" ng-class="{hidden: hiddenCreate}">
+		<form class="form-horizontal">
+			<div class="control-group">
+				<label class="control-label" for="spotName">名称</label>
+				<div class="controls">
+					<input id="spotName" placeholder="输入名称" title="不要包含特殊字符" type="text" ng-click="clearMsg()"/>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="spotDesc">描述</label>
+				<div class="controls">
+					<textarea id="spotDesc" placeholder="简单说明信息"></textarea>
+				</div>
+			</div>
+			<hr />
+			<div class="control-group">
+				<div class="controls">
+					<button ng-click="create()" class="btn btn-success">创建</button>
+					<button id="backList" class="btn btn-success" onclick="javascript:history.back()">返回</button>
+					<label class="label" id="labMsg"></label>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

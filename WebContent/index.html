@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>登陆</title>
+		<link rel="shortcut icon" href="img/short.ico" />
+		<!--用百度的静态资源库的cdn安装bootstrap环境-->
+		<!-- Bootstrap 核心 CSS 文件 -->
+		<link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+		<!--font-awesome 核心我CSS 文件-->
+		<link href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+		<!-- 在bootstrap.min.js 之前引入 -->
+		<script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+		<!-- Bootstrap 核心 JavaScript 文件 -->
+		<script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+		<!--jquery.validate-->
+		<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+		<style type="text/css">
+			body {
+				background: url(img/lg.jpg) no-repeat;
+				font-size: 16px;
+			}
+			
+			.form {
+				background: rgba(255, 255, 255, 0.2);
+				/*width: 380px;
+				/*margin: 200px auto;*/
+			}
+			
+			.fa {
+				display: inline-block;
+				top: 27px;
+				left: 6px;
+				position: relative;
+				color: #ccc;
+			}
+			
+			input[type="text"],
+			input[type="password"] {
+				padding-left: 26px;
+			}
+			
+			.checkbox {
+				padding-left: 21px;
+				font-size: 14px
+			}
+			#msg{
+				font-size: 14px;
+				color: red;
+			}
+			.page-top{
+				height: 150px;
+			}
+			
+			.page-foot{
+				text-align: center;
+				line-height: 25px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="page-top row">
+				
+			</div>
+			<div class="row" >
+				<div class="col-md-7 column">
+				</div>
+				<div class="col-md-5 column form row">
+					<form class="form-horizontal col-sm-offset-3 col-md-offset-3" id="login_form" method="post">
+					<h3 class="form-title">登陆系统</h3>
+					<div class="col-sm-9 col-md-9">
+						<div class="form-group">
+							<i class="fa fa-user fa-lg"></i> <input id="username" class="form-control required" type="text" placeholder="请输入账户" name="username" autofocus="autofocus" maxlength="20" />
+						</div>
+						<div class="form-group">
+							<i class="fa fa-lock fa-lg"></i>
+							<input id="pwd" class="form-control required" type="password" placeholder="请输入密码" name="password" maxlength="20" />
+						</div>
+						<div class="form-group">
+							<label class="checkbox">
+							<input type="checkbox" name="remember" value="1"/> 记住账号
+						</label>
+							<hr />
+						</div>
+						<div class="form-group">
+							<input type="submit" class="btn btn-block btn-success pull-right" value="进入系统 " />
+						</div>
+						<div id="msg" class="form-group">
+				         &nbsp;
+						</div>
+					</div>
+				</form>
+				</div>
+			</div>
+			<div class="page-foot row"></div>
+		</div>
+		<script type="text/javascript" src="js/login.js"></script>
+	</body>
+
+</html>

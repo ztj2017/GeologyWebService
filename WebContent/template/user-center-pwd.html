@@ -1,0 +1,53 @@
+<div class="span2">
+	<div class="accordion" id="accordion-881911">
+		<div class="accordion-group">
+			<div class="accordion-heading" style="background:#EEEEEE;">
+				<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-881911" href="javascript:void(0);#accordion-element-303414">密码管理</a>
+			</div>
+			<div id="accordion-element-303414" class="accordion-body collapse in">
+				<div class="accordion-inner" style="background:#FCF8E3;">
+					<a href="#!/user-center/pwd" style="color: #000000;">-- 修改密码</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="span10">
+	<ul class="breadcrumb">
+		<li class="active">
+			修改密码
+		</li>
+	</ul>
+	<!--修改密码-->
+	<div class="row-fluid">
+		<form class="form-horizontal">
+			<div class="control-group">
+				<label class="control-label" for="oldPwd">旧密码</label>
+				<div class="controls">
+					<input id="oldPwd" required placeholder="请输入旧密码" type="password">
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="newPwd">新密码</label>
+				<div class="controls">
+					<input id="newPwd" required placeholder="请输入新密码" type="password">
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="newPwd1">新密码</label>
+				<div class="controls">
+					<input id="newPwd1" required placeholder="再次输入新密码" type="password">
+				</div>
+			</div>
+				<hr />
+			<div class="control-group">
+				<div class="controls">
+					<button ng-click="changePwd(this)" class="btn btn-success">确认修改</button>
+					<label class="label label-success"><i class="glyphicon glyphicon-ok"></i> 修改成功</label>
+					<label class="label">两次密码不一致</label>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
